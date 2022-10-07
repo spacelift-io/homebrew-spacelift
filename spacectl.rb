@@ -5,21 +5,21 @@
 class Spacectl < Formula
   desc "Spacelift client and CLI"
   homepage "https://github.com/spacelift-io/spacectl"
-  version "0.13.0"
+  version "0.14.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/spacelift-io/spacectl/releases/download/v0.13.0/spacectl_0.13.0_darwin_amd64.zip"
-      sha256 "a498fbce47e7c66ea01264d26b24d36be5d4058f4809094bafe968b73dd2d0f8"
+      url "https://github.com/spacelift-io/spacectl/releases/download/v0.14.0/spacectl_0.14.0_darwin_amd64.zip"
+      sha256 "40ebd34aa2bd5f23042f879e8180154657a9b1b4b5a0aede9b509f20f8aa37e4"
 
       def install
         bin.install "spacectl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/spacelift-io/spacectl/releases/download/v0.13.0/spacectl_0.13.0_darwin_arm64.zip"
-      sha256 "983bd7739e2dcf62ae1d268d5f26b658a39c67a753319e079c6eb121b4f6eeab"
+      url "https://github.com/spacelift-io/spacectl/releases/download/v0.14.0/spacectl_0.14.0_darwin_arm64.zip"
+      sha256 "a5f8c57ac679473c93f12e7b0b8ae5ae632eb00ae5c2a01ba5f92435fa128d2c"
 
       def install
         bin.install "spacectl"
@@ -28,17 +28,17 @@ class Spacectl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/spacelift-io/spacectl/releases/download/v0.13.0/spacectl_0.13.0_linux_amd64.zip"
-      sha256 "af6d3c4afeff1cf64e6040653ba1e6e8706a46c940492df3eb474e808685ca3a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/spacelift-io/spacectl/releases/download/v0.14.0/spacectl_0.14.0_linux_arm64.zip"
+      sha256 "6cf6de81574b271e5c7ba1db729af1ba7738d10d6738b6558815d6ab53a89d8e"
 
       def install
         bin.install "spacectl"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/spacelift-io/spacectl/releases/download/v0.13.0/spacectl_0.13.0_linux_arm64.zip"
-      sha256 "c33a41ac6995c090ddd6c1b8f52d55e481dd8bd368ec48a40e6c44205e930dd0"
+    if Hardware::CPU.intel?
+      url "https://github.com/spacelift-io/spacectl/releases/download/v0.14.0/spacectl_0.14.0_linux_amd64.zip"
+      sha256 "08d4eba68dcf2181006fb98574c1f0f0dad1e7fc10b08c18ab886350513cc64c"
 
       def install
         bin.install "spacectl"
