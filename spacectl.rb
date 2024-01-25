@@ -9,9 +9,9 @@ class Spacectl < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/spacelift-io/spacectl/releases/download/v0.30.0/spacectl_0.30.0_darwin_arm64.zip"
-      sha256 "db0f3c652e36a9e705aca37f1ee5a50ee1cc8f59fe4a66eb5bc11be0f6b8f625"
+    if Hardware::CPU.intel?
+      url "https://github.com/spacelift-io/spacectl/releases/download/v0.30.0/spacectl_0.30.0_darwin_amd64.zip"
+      sha256 "53489fef7f95eeb1569e8c1e5e303b33368d1e2e0a3db3f27282a2d6cd280107"
 
       def install
         bin.install "spacectl"
@@ -20,9 +20,9 @@ class Spacectl < Formula
         fish_completion.install "completions/spacectl.fish"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/spacelift-io/spacectl/releases/download/v0.30.0/spacectl_0.30.0_darwin_amd64.zip"
-      sha256 "d42cd673a4c83dfe5b9e86b91691b06ca75065dc986899905c93fca48788cd95"
+    if Hardware::CPU.arm?
+      url "https://github.com/spacelift-io/spacectl/releases/download/v0.30.0/spacectl_0.30.0_darwin_arm64.zip"
+      sha256 "196b5ce69f3af8e2c61aa2ce663a557cb38cd19396563d9a8f1e562b4b5a5602"
 
       def install
         bin.install "spacectl"
@@ -36,7 +36,7 @@ class Spacectl < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/spacelift-io/spacectl/releases/download/v0.30.0/spacectl_0.30.0_linux_arm64.zip"
-      sha256 "5cc14379afdf6f8fa30c584cf1bdb85cb89fc028dc78e96a897c6abe4334fe40"
+      sha256 "cc241f8751b2cf30ab6ecab1672a40890f73f71658c75a1b41da642780c8cc00"
 
       def install
         bin.install "spacectl"
@@ -47,7 +47,7 @@ class Spacectl < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/spacelift-io/spacectl/releases/download/v0.30.0/spacectl_0.30.0_linux_amd64.zip"
-      sha256 "8fc97e25c0fb34080d5e11b1e140060aa921aa2650f1d3253cb3ba4caa8e0f7f"
+      sha256 "e0c5ddd3a9cd6a7b8615efa6d8b9e02e16cdfaf3b7a3fbf9b7dc52c83887af2a"
 
       def install
         bin.install "spacectl"
