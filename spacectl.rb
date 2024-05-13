@@ -5,13 +5,13 @@
 class Spacectl < Formula
   desc "Spacelift client and CLI"
   homepage "https://github.com/spacelift-io/spacectl"
-  version "0.30.0"
+  version "1.0.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/spacelift-io/spacectl/releases/download/v0.30.0/spacectl_0.30.0_darwin_amd64.zip"
-      sha256 "53489fef7f95eeb1569e8c1e5e303b33368d1e2e0a3db3f27282a2d6cd280107"
+    on_intel do
+      url "https://github.com/spacelift-io/spacectl/releases/download/v1.0.0/spacectl_1.0.0_darwin_amd64.zip"
+      sha256 "061c9ddc2763f3c16c7f3e40f342a33582002b5c1dfb66280224364b0230f0c1"
 
       def install
         bin.install "spacectl"
@@ -20,9 +20,9 @@ class Spacectl < Formula
         fish_completion.install "completions/spacectl.fish"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/spacelift-io/spacectl/releases/download/v0.30.0/spacectl_0.30.0_darwin_arm64.zip"
-      sha256 "196b5ce69f3af8e2c61aa2ce663a557cb38cd19396563d9a8f1e562b4b5a5602"
+    on_arm do
+      url "https://github.com/spacelift-io/spacectl/releases/download/v1.0.0/spacectl_1.0.0_darwin_arm64.zip"
+      sha256 "ee7565c68a193f070b956cef88b6334c62a1730e156a25255d1e6410ebacc434"
 
       def install
         bin.install "spacectl"
@@ -34,26 +34,30 @@ class Spacectl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/spacelift-io/spacectl/releases/download/v0.30.0/spacectl_0.30.0_linux_arm64.zip"
-      sha256 "cc241f8751b2cf30ab6ecab1672a40890f73f71658c75a1b41da642780c8cc00"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/spacelift-io/spacectl/releases/download/v1.0.0/spacectl_1.0.0_linux_amd64.zip"
+        sha256 "9d5ad9cfbfd2f206649028dbc5aa8838df6a26c8075d62d302cd1fd6d9828b5e"
 
-      def install
-        bin.install "spacectl"
-        bash_completion.install "completions/spacectl.bash" => "spacectl"
-        zsh_completion.install "completions/spacectl.zsh" => "_spacectl"
-        fish_completion.install "completions/spacectl.fish"
+        def install
+          bin.install "spacectl"
+          bash_completion.install "completions/spacectl.bash" => "spacectl"
+          zsh_completion.install "completions/spacectl.zsh" => "_spacectl"
+          fish_completion.install "completions/spacectl.fish"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/spacelift-io/spacectl/releases/download/v0.30.0/spacectl_0.30.0_linux_amd64.zip"
-      sha256 "e0c5ddd3a9cd6a7b8615efa6d8b9e02e16cdfaf3b7a3fbf9b7dc52c83887af2a"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/spacelift-io/spacectl/releases/download/v1.0.0/spacectl_1.0.0_linux_arm64.zip"
+        sha256 "ee7bd6e82bd5b6676929535d3497ab7eaeeb8553aa576a41f8d62ee74f95f91e"
 
-      def install
-        bin.install "spacectl"
-        bash_completion.install "completions/spacectl.bash" => "spacectl"
-        zsh_completion.install "completions/spacectl.zsh" => "_spacectl"
-        fish_completion.install "completions/spacectl.fish"
+        def install
+          bin.install "spacectl"
+          bash_completion.install "completions/spacectl.bash" => "spacectl"
+          zsh_completion.install "completions/spacectl.zsh" => "_spacectl"
+          fish_completion.install "completions/spacectl.fish"
+        end
       end
     end
   end
