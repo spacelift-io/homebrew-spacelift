@@ -5,13 +5,13 @@
 class Spacectl < Formula
   desc "Spacelift client and CLI"
   homepage "https://github.com/spacelift-io/spacectl"
-  version "1.15.2"
+  version "1.16.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/spacelift-io/spacectl/releases/download/v1.15.2/spacectl_1.15.2_darwin_amd64.zip"
-      sha256 "2a9c33000e80b0ddb64504a66f11d10ee1bd104c6ceaa939be715c1e6113e6a0"
+      url "https://github.com/spacelift-io/spacectl/releases/download/v1.16.0/spacectl_1.16.0_darwin_amd64.zip"
+      sha256 "442d5b6d5cb143cd88ebd3f5ac6a9d7450b8e04fabdecf3674cf1ce911c6c573"
 
       def install
         bin.install "spacectl"
@@ -21,8 +21,8 @@ class Spacectl < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/spacelift-io/spacectl/releases/download/v1.15.2/spacectl_1.15.2_darwin_arm64.zip"
-      sha256 "e68469cbfed68feae1ea67ed86da9baa71cce4e8d2bd362978f637e7b1f4d9d8"
+      url "https://github.com/spacelift-io/spacectl/releases/download/v1.16.0/spacectl_1.16.0_darwin_arm64.zip"
+      sha256 "6ba04e7483a44dcb53db1b4f2a1dc160dcb79a2310e0d2d850d6f5c8f2cba4ec"
 
       def install
         bin.install "spacectl"
@@ -35,8 +35,8 @@ class Spacectl < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/spacelift-io/spacectl/releases/download/v1.15.2/spacectl_1.15.2_linux_amd64.zip"
-      sha256 "2f164709bf2a21aaab404a31adf627d2022d23befb99981228efbca84f808cad"
+      url "https://github.com/spacelift-io/spacectl/releases/download/v1.16.0/spacectl_1.16.0_linux_amd64.zip"
+      sha256 "8b1d067ddd78d808bd05650939947eb391c718c6071437a62cc7f1296af708f4"
       def install
         bin.install "spacectl"
         bash_completion.install "completions/spacectl.bash" => "spacectl"
@@ -45,8 +45,8 @@ class Spacectl < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/spacelift-io/spacectl/releases/download/v1.15.2/spacectl_1.15.2_linux_arm64.zip"
-      sha256 "ae83fdbb30f1ad70ef3129ecfe949607b2aa368f85516da241f34bab8bdba649"
+      url "https://github.com/spacelift-io/spacectl/releases/download/v1.16.0/spacectl_1.16.0_linux_arm64.zip"
+      sha256 "e0da20201c15b87fd0b75945211eb179f476182c9997be0045342387cb85b8d9"
       def install
         bin.install "spacectl"
         bash_completion.install "completions/spacectl.bash" => "spacectl"
