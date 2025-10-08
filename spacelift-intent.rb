@@ -11,7 +11,7 @@ class SpaceliftIntent < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/spacelift-io/spacelift-intent/releases/download/v0.0.1/spacelift-intent_0.0.1_darwin_amd64.zip"
-      sha256 "82d7a2717aada4aa8506da91167a66810f30bd60c83444bdd75863eddee8cdef"
+      sha256 "332b3d6e088e26b14d6a94ae9f34a98ed6477838974fac45f269ee1ebad60413"
 
       def install
         bin.install "spacelift-intent"
@@ -19,7 +19,7 @@ class SpaceliftIntent < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/spacelift-io/spacelift-intent/releases/download/v0.0.1/spacelift-intent_0.0.1_darwin_arm64.zip"
-      sha256 "90318869e929dd70d821bc91ddf8f2d7dd8e3848c64269f046ebfcda1c4d69b6"
+      sha256 "3206802f927b48ff64ed68b2ed113d33fd9d0eccd4099e46833bafec8e93427b"
 
       def install
         bin.install "spacelift-intent"
@@ -30,14 +30,14 @@ class SpaceliftIntent < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/spacelift-io/spacelift-intent/releases/download/v0.0.1/spacelift-intent_0.0.1_linux_amd64.zip"
-      sha256 "43e725e2e9b4f03ed519f825b063cddd38e688d8cbabd9f666e6b88418d7b63e"
+      sha256 "567a44f5c6ab391c333de0b2ab860efa8681f27eaaf4aaa603d7b2d45f288349"
       def install
         bin.install "spacelift-intent"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/spacelift-io/spacelift-intent/releases/download/v0.0.1/spacelift-intent_0.0.1_linux_arm64.zip"
-      sha256 "87c91e1ea815d4e24ad9f04850d7825d6abb9f88720125253f639306b0537048"
+      sha256 "5d01b5aecc7a33a681a260b135b539ac0803dd3c4726ac0a513d003a7656a30d"
       def install
         bin.install "spacelift-intent"
       end
