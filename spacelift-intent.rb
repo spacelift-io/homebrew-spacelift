@@ -5,23 +5,23 @@
 class SpaceliftIntent < Formula
   desc "Spacelift Intent MCP Server"
   homepage "https://github.com/spacelift-io/spacelift-intent"
-  version "0.1.1"
+  version "0.2.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/spacelift-io/spacelift-intent/releases/download/v0.1.1/spacelift-intent_0.1.1_darwin_amd64.zip"
-      sha256 "85ddf44786709c44880b49e86a770c182cbeb6688f21ef45a1a8257bdc9b3683"
+      url "https://github.com/spacelift-io/spacelift-intent/releases/download/v0.2.0/spacelift-intent_0.2.0_darwin_amd64.zip"
+      sha256 "83dcecf328c36fdf778bc6bdb6ea0deccc46ebe155d269d1402b852d32a34e28"
 
-      def install
+      define_method(:install) do
         bin.install "spacelift-intent"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/spacelift-io/spacelift-intent/releases/download/v0.1.1/spacelift-intent_0.1.1_darwin_arm64.zip"
-      sha256 "eeaac556850e8595b7743ad861f7cc0e5f74607f2feb649c6fe89381928049ab"
+      url "https://github.com/spacelift-io/spacelift-intent/releases/download/v0.2.0/spacelift-intent_0.2.0_darwin_arm64.zip"
+      sha256 "707227eae4523a80d4c9f33ae6384edb026f23fac719a6244c21391ddcaa7318"
 
-      def install
+      define_method(:install) do
         bin.install "spacelift-intent"
       end
     end
@@ -29,16 +29,16 @@ class SpaceliftIntent < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/spacelift-io/spacelift-intent/releases/download/v0.1.1/spacelift-intent_0.1.1_linux_amd64.zip"
-      sha256 "8877d755489072d349c086cf8a8e1271a1b68f6647d7bf77dbdd14cb1b3fda10"
-      def install
+      url "https://github.com/spacelift-io/spacelift-intent/releases/download/v0.2.0/spacelift-intent_0.2.0_linux_amd64.zip"
+      sha256 "e90fac60bd3f4a5a6bd856907402ee3aa73e74eaeb089993ea7d2e1a099f9c9c"
+      define_method(:install) do
         bin.install "spacelift-intent"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/spacelift-io/spacelift-intent/releases/download/v0.1.1/spacelift-intent_0.1.1_linux_arm64.zip"
-      sha256 "11ea35ea4fa2dc4e27726e1e6b0ab37351b8ded080d9762051ed0d92b62105de"
-      def install
+      url "https://github.com/spacelift-io/spacelift-intent/releases/download/v0.2.0/spacelift-intent_0.2.0_linux_arm64.zip"
+      sha256 "77dc672e8abfe72bf7f6034743d273f2f30faf50736cb8788a20bec8d99be767"
+      define_method(:install) do
         bin.install "spacelift-intent"
       end
     end
