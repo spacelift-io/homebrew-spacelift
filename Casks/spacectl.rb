@@ -9,7 +9,7 @@ cask "spacectl" do
   name "spacectl"
   desc "Spacelift client and CLI"
   homepage "https://github.com/spacelift-io/spacectl"
-  version "1.28.0"
+  version "1.29.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -23,22 +23,22 @@ cask "spacectl" do
   on_macos do
     on_intel do
       url "https://github.com/spacelift-io/spacectl/releases/download/v#{version}/spacectl_#{version}_darwin_amd64.zip"
-      sha256 "0b53cb524424b6510417e6ee89f0a2bf0e002e9e87f59429d9ef5d5f61c5d2df"
+      sha256 "ef30f6f89ef53b2d4535f68d4f7bc5f733ff16f2ec34423d2285ce03690458ae"
     end
     on_arm do
       url "https://github.com/spacelift-io/spacectl/releases/download/v#{version}/spacectl_#{version}_darwin_arm64.zip"
-      sha256 "ff7b6a236569671a1f4c797826ba80198c1d7f1dc7536753a4045295a61f938d"
+      sha256 "1d5bbfe7807ae7813b6996e0ab5a9d3211a59bc8b0bcc190d07ed644329bbe70"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/spacelift-io/spacectl/releases/download/v#{version}/spacectl_#{version}_linux_amd64.zip"
-      sha256 "5f1a08af3f673573e0b9800e086527619a7fb4d65299fd9f1242a9d3951a55b6"
+      sha256 "4a895dc674eaf886279c481873e5be786fe5b38d8149e5d1e26037f33c4b8706"
     end
     on_arm do
       url "https://github.com/spacelift-io/spacectl/releases/download/v#{version}/spacectl_#{version}_linux_arm64.zip"
-      sha256 "f24ff32818f98ebc7620477a1c5d7889339ef32b6bc623e9a808a59860f01efc"
+      sha256 "ff137c81979dd52584a130e39c6e8d2cf10bb6015ccc0ea6664385f67bd100d5"
     end
   end
 
